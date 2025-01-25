@@ -1,0 +1,121 @@
+
+                      
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Nandhana's Portfolio</title>
+      <link rel="stylesheet" href="style.css">
+      <!-- FontAwesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  
+  <body>
+      <div id="header">
+          <div class="container">
+              <nav>
+                  <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                  </ul>
+              </nav>
+              <div class="header-text">
+                  <p>BTECH IN CSE!</p>
+                  <h1>HI, I'M NANDHANA TS</h1>
+              </div>
+          </div><i class="fa-solid fa-xmark"></i>
+      </div>
+      <div id="about">
+          <div class="container">
+              <div class="row">
+                  <div class="about-col-1">
+                      <img src="myyyy.jpeg" alt="Nandhana's Photo">
+                  </div>
+                  <div class="about-col-2">
+                      <h1 class="sub-title">ABOUT ME</h1>
+                      <p>Greetings! I am Nandhana TS, currently pursuing a Bachelor of Technology in Computer Science and
+                          Engineering. I have always been passionate about expanding my knowledge and exploring new opportunities for personal and professional growth. One of my greatesty interests lies in the field of media,where i am drawn to creativity,communication,and the ability to make an impact through various forms of expression.
+                        <br><br> I am a self motivated learner who takes pride in acquiring new skills and knowledge independently, driven by curiosity and a desire for continuous improvement. In addition to my passion for media, i am deeply commited to my acdemic pursuits. I approach my studies with dedication and enthusiasm, aiming not only to excel in my coursework but also to gain a deeper understanding of my chosen field.
+                    </p>
+                      <div class="tab-titles">
+                          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                          <p class="tab-links" onclick="opentab('education')">Education</p>
+                      </div>
+                      <div class="tab-contents active-tab" id="skills">
+                          <ul>
+                              <li><span>PROGRAMMING LANGUAGES:</span> C Programming, Java</li>
+                              <li><span>CORE KNOWLEDGE:</span> Data Structures, Object-Oriented Programming</li>
+                              <li><span>INTERPERSONAL SKILLS:</span> Critical Thinking, Problem Solving, Leadership, Communication</li>
+                          </ul>
+                      </div>
+                      <div class="tab-contents" id="education">
+                          <ul>
+                              <li><span>SECONDARY SCHOOL:</span> The Greenhills Public School (83%)</li>
+                              <li><span>HIGHER SECONDARY SCHOOL:</span> St. Mary's Higher Secondary School (93%)</li>
+                              <li><span>COLLEGE:</span> College of Engineering Vadakara</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div id="contact">
+          <div class="container">
+              <div class="row">
+                  <div class="contact-left">
+                      <h1 class="sub-title">CONTACT ME</h1>
+                      <p><i class="fas fa-paper-plane"></i> nandhanats77@gmail.com</p>
+                      <div class="social-icons">
+                          <a href="#"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-linkedin"></i></a>
+                      </div>
+                  </div>
+                  <div class="contact-right">
+                      <form name="submit-to-google-sheet">
+                          <input type="text" name="name" placeholder="Your Name" required>
+                          <input type="email" name="email" placeholder="Your Email" required>
+                          <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                          <button type="submit" class="btn2">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <script>
+          var tablinks = document.getElementsByClassName("tab-links");
+          var tabcontents = document.getElementsByClassName("tab-contents");
+  
+          function opentab(tabname) {
+              for (tablink of tablinks) {
+                  tablink.classList.remove("active-link");
+              }
+              for (tabcontent of tabcontents) {
+                  tabcontent.classList.remove("active-tab");
+              }
+              event.currentTarget.classList.add("active-link");
+              document.getElementById(tabname).classList.add("active-tab");
+          }
+      </script>
+      <script>
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbzDd0DoJjK-72O5VoVReP7KNqwsbd6CWfFkP8HGOCUKMBHQiRBY7fzumXYBglKojnNUHw/exec';
+          const form = document.forms['submit-to-google-sheet'];
+  
+          form.addEventListener('submit', e => {
+              e.preventDefault();
+              fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                  .then(response => {
+                      console.log('Success!', response);
+                      form.reset(); // Clear the form fields
+                  })
+                  .catch(error => console.error('Error!', error.message));
+          });
+      </script>
+  </body>
+  
+  </html>
+  
