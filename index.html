@@ -1,121 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandhana TS - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">Nandhana</a>
 
-                      
+            <div class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-  <!DOCTYPE html>
-  <html lang="en">
-  
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Nandhana's Portfolio</title>
-      <link rel="stylesheet" href="style.css">
-      <!-- FontAwesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  </head>
-  
-  <body>
-      <div id="header">
-          <div class="container">
-              <nav>
-                  <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#about">About</a></li>
-                      <li><a href="#contact">Contact</a></li>
-                  </ul>
-              </nav>
-              <div class="header-text">
-                  <p>BTECH IN CSE!</p>
-                  <h1>HI, I'M NANDHANA TS</h1>
-              </div>
-          </div><i class="fa-solid fa-xmark"></i>
-      </div>
-      <div id="about">
-          <div class="container">
-              <div class="row">
-                  <div class="about-col-1">
-                      <img src="myyyy.jpeg" alt="Nandhana's Photo">
-                  </div>
-                  <div class="about-col-2">
-                      <h1 class="sub-title">ABOUT ME</h1>
-                      <p>Greetings! I am Nandhana TS, currently pursuing a Bachelor of Technology in Computer Science and
-                          Engineering. I have always been passionate about expanding my knowledge and exploring new opportunities for personal and professional growth. One of my greatesty interests lies in the field of media,where i am drawn to creativity,communication,and the ability to make an impact through various forms of expression.
-                        <br><br> I am a self motivated learner who takes pride in acquiring new skills and knowledge independently, driven by curiosity and a desire for continuous improvement. In addition to my passion for media, i am deeply commited to my acdemic pursuits. I approach my studies with dedication and enthusiasm, aiming not only to excel in my coursework but also to gain a deeper understanding of my chosen field.
-                    </p>
-                      <div class="tab-titles">
-                          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                          <p class="tab-links" onclick="opentab('education')">Education</p>
-                      </div>
-                      <div class="tab-contents active-tab" id="skills">
-                          <ul>
-                              <li><span>PROGRAMMING LANGUAGES:</span> C Programming, Java</li>
-                              <li><span>CORE KNOWLEDGE:</span> Data Structures, Object-Oriented Programming</li>
-                              <li><span>INTERPERSONAL SKILLS:</span> Critical Thinking, Problem Solving, Leadership, Communication</li>
-                          </ul>
-                      </div>
-                      <div class="tab-contents" id="education">
-                          <ul>
-                              <li><span>SECONDARY SCHOOL:</span> The Greenhills Public School (83%)</li>
-                              <li><span>HIGHER SECONDARY SCHOOL:</span> St. Mary's Higher Secondary School (93%)</li>
-                              <li><span>COLLEGE:</span> College of Engineering Vadakara</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div id="contact">
-          <div class="container">
-              <div class="row">
-                  <div class="contact-left">
-                      <h1 class="sub-title">CONTACT ME</h1>
-                      <p><i class="fas fa-paper-plane"></i> nandhanats77@gmail.com</p>
-                      <div class="social-icons">
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-linkedin"></i></a>
-                      </div>
-                  </div>
-                  <div class="contact-right">
-                      <form name="submit-to-google-sheet">
-                          <input type="text" name="name" placeholder="Your Name" required>
-                          <input type="email" name="email" placeholder="Your Email" required>
-                          <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                          <button type="submit" class="btn2">Submit</button>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <script>
-          var tablinks = document.getElementsByClassName("tab-links");
-          var tabcontents = document.getElementsByClassName("tab-contents");
-  
-          function opentab(tabname) {
-              for (tablink of tablinks) {
-                  tablink.classList.remove("active-link");
-              }
-              for (tabcontent of tabcontents) {
-                  tabcontent.classList.remove("active-tab");
-              }
-              event.currentTarget.classList.add("active-link");
-              document.getElementById(tabname).classList.add("active-tab");
-          }
-      </script>
-      <script>
-          const scriptURL = 'https://script.google.com/macros/s/AKfycbzDd0DoJjK-72O5VoVReP7KNqwsbd6CWfFkP8HGOCUKMBHQiRBY7fzumXYBglKojnNUHw/exec';
-          const form = document.forms['submit-to-google-sheet'];
-  
-          form.addEventListener('submit', e => {
-              e.preventDefault();
-              fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                  .then(response => {
-                      console.log('Success!', response);
-                      form.reset(); // Clear the form fields
-                  })
-                  .catch(error => console.error('Error!', error.message));
-          });
-      </script>
-  </body>
-  
-  </html>
-  
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="my.jpg" alt="Nandhana TS" class="hero-image">
+            <h1 class="hero-title">Nandhana TS</h1>
+            <p class="hero-subtitle">Computer Science Engineering Student</p>
+            <p class="hero-description">I'm passionate about coding and web development. Currently studying CS engineering while working in media management and exploring full-stack development.</p>
+            <div class="hero-links">
+                <a href="#" class="social-link">GitHub</a>
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <p>Hi! I'm a Computer Science Engineering student passionate about creating meaningful digital solutions. I've been diving deep into programming with C, Python, and Java, and love building web applications using HTML, CSS, and JavaScript.</p>
+                <p>Currently, I'm working on several exciting projects including Webconnect - a platform that connects people with similar skills for collaboration. I also enjoy creating practical exploration in various projects.</p>
+                <p>Besides coding, I work with design tools like Figma for UI/UX and CapCut for video editing. I'm gaining real-world experience in media management while being actively involved in IEDC, CSI, and NSS volunteer work.</p>
+                <p>My studies in Data Structures, Operating Systems, and Object-Oriented Programming provide a solid foundation for building efficient and scalable applications. I believe in learning by doing and love turning ideas into working projects.</p>
+                <p>I always like to enchance my skills with continue learning and hardwork.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">CapCut</span>
+                <span class="skill-tag">Data Structures</span>
+                <span class="skill-tag">Operating Systems</span>
+                <span class="skill-tag">Object-Oriented Programming</span>
+                <span class="skill-tag">Web Development</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Webconnect</h3>
+                        <span class="project-status in-development">In Development</span>
+                    </div>
+                    <p class="project-description">A platform that connects people with similar skills for collaboration and networking. Built to help developers, designers, and creators find teammates and build projects together.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">Web Development</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">GitHub</a>
+                        <a href="#" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Restaurant Booking Site</h3>
+                        <span class="project-status completed">In progress</span>
+                    </div>
+                    <p class="project-description">A complete restaurant website with table booking functionality, menu display, and customer reviews. Features responsive design and user-friendly interface.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">UI/UX</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">GitHub</a>
+                        <a href="#" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Book Recommendation Platform</h3>
+                        <span class="project-status in-progress">In progress</span>
+                    </div>
+                    <p class="project-description">A smart book recommendation system that suggests books based on user preferences and reading history. Includes user reviews and ratings.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">UI Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">GitHub</a>
+                        <a href="#" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Media Manager</h3>
+                        <span class="experience-type">Current Role</span>
+                    </div>
+                    <h4 class="experience-company">Website Company</h4>
+                    <p class="experience-description">Managing media content and digital assets for web projects.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">IEDC Member</h3>
+                        <span class="experience-type">Active</span>
+                    </div>
+                    <h4 class="experience-company">Innovation & Entrepreneurship Development Cell</h4>
+                    <p class="experience-description">Participating in innovation workshops and entrepreneurship events.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">CSI Member</h3>
+                        <span class="experience-type">Active</span>
+                    </div>
+                    <h4 class="experience-company">Computer Science Of India</h4>
+                    <p class="experience-description">Engaging in technical events and coding competitions.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">NSS Volunteer</h3>
+                        <span class="experience-type">Volunteer</span>
+                    </div>
+                    <h4 class="experience-company">National Service Scheme</h4>
+                    <p class="experience-description">Contributing to community service and social awareness programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section 
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-item">
+                    <span class="contact-label">Email:</span>
+                    <span class="contact-value"><a href="https://mail.google.com/mail/?view=cm&to=your@email.com" target="_blank" rel="noopener noreferrer">nandhanats77gmail.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Location</span>
+                    <span class="contact-value">Kozhikode,Kerala, India</span>
+                </div>
+                <p class="contact-message">Let's connect and explore opportunities to work together</p>
+            </div>
+        </div>
+    </section> -->
+    <!-- ...existing code... -->
+<!-- Contact Section 
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-content">
+            <div class="contact-item">
+                <span class="contact-label">Email:</span>
+                <span class="contact-value">
+                    <a href="https://mail.google.com/mail/?view=cm&to=nandhanats77@gmail.com" target="_blank" rel="noopener noreferrer">
+                        nandhanats77@gmail.com
+                    </a>
+                </span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">GitHub:</span>
+                <span class="contact-value">
+                    <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">
+                        github.com/your-github-username
+                    </a>
+                </span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Kozhikode, Kerala, India</span>
+            </div>
+            <p class="contact-message">Let's connect and explore opportunities to work together.<br>
+            This portfolio is open source and published on 
+            <a href="https://github.com/your-github-username/your-repo-name" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            </p>
+        </div>
+        <!-- GitHub Contribution Graph 
+        <div style="margin-top:2rem;">
+            <h3 style="text-align:center;">My GitHub Activity</h3>
+            <img src="https://ghchart.rshah.org/your-github-username" alt="GitHub Contribution Graph" style="width:100%;max-width:700px;display:block;margin:0 auto;">
+            <p style="text-align:center;font-size:0.9rem;color:#888;">(Green squares show your recent GitHub activity)</p>
+        </div>
+    </div>
+</section>-->
+<!-- ...existing code... -->
+ <section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-content">
+            <div class="contact-item">
+                <span class="contact-label">Email:</span>
+                <span class="contact-value">
+                    <a href="https://mail.google.com/mail/?view=cm&to=nandhanats77@gmail.com" target="_blank" rel="noopener noreferrer">
+                        nandhanats77@gmail.com
+                    </a>
+                </span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">GitHub:</span>
+                <span class="contact-value">
+                    <a href="https://github.com/Nandhana73" target="_blank" rel="noopener noreferrer">
+                        github.com/your-github-username
+                    </a>
+                </span>
+            </div>
+            <!--<div class="contact-item">
+                <span class="contact-label">Location:</span>
+                <span class="contact-value">Kozhikode, Kerala, India</span>
+            </div>
+            <p class="contact-message">
+                Let's connect and explore opportunities to work together.<br>
+                This portfolio is open source and published on 
+                <a href="https://github.com/Nandhana73/weatherpredictor" target="_blank" rel="noopener noreferrer">GitHub</a>.
+                <a href="https://github.com/Nandhana73/todo-listt" target="_blank" rel="noopener noreferrer">GitHub</a>.
+                <a href="https://github.com/Nandhana73/c-connect" target="_blank" rel="noopener noreferrer">GitHub</a>.
+                <a href="https://github.com/Nandhana73/portfol-" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            
+            </p>
+        </div>
+         GitHub Contribution Graph and Stats -->
+        <!-- <div style="margin-top:2rem;">
+            <h3 style="text-align:center;">My GitHub Activity & Repository Analysis</h3>
+            <img src="https://ghchart.rshah.org/Nandhana73" alt="GitHub Contribution Graph" style="width:100%;max-width:700px;display:block;margin:0 auto;">
+            <p style="text-align:center;font-size:0.9rem;color:#888;">(Green squares show your recent GitHub activity)</p>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2rem;">
+                <!-- GitHub Stats Card -->
+               <!--- <img src="https://github-readme-stats.vercel.app/api?username=your-github-username&show_icons=true&theme=default" alt="GitHub Stats" style="max-width:420px;width:100%;">-->
+                <!-- Top Languages Card -->
+               <!-- <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=your-github-username&layout=compact&theme=default" alt="Top Languages" style="max-width:320px;width:100%;">
+            </div>
+        </div>
+    </div>
+</section> -->
+<div class="contact-item">
+    <span class="contact-label">GitHub:</span>
+    <span class="contact-value">
+        <a href="https://github.com/Nandhana73" target="_blank" rel="noopener noreferrer">
+            github.com/Nandhana73
+        </a>
+    </span>
+</div>
+<div class="contact-item">
+    <span class="contact-label">Location:</span>
+    <span class="contact-value">Kozhikode, Kerala, India</span>
+</div>
+<p class="contact-message">
+    Let's connect and explore opportunities to work together.<br>
+    This portfolio is open source and published on GitHub<br>
+    <p>Look aside</p>
+    <a href="https://github.com/Nandhana73/weatherpredictor" target="_blank" rel="noopener noreferrer">Weather Predictor</a> |
+    <a href="https://github.com/Nandhana73/todo-listt" target="_blank" rel="noopener noreferrer">To-Do List</a> |
+    <a href="https://github.com/Nandhana73/c-connect" target="_blank" rel="noopener noreferrer">C-Connect</a> |
+    <a href="https://github.com/Nandhana73/portfol-" target="_blank" rel="noopener noreferrer">Portfolio Source</a>
+</p>
+<!-- GitHub Contribution Graph and Stats -->
+<div style="margin-top:2rem;">
+    <h3 style="text-align:center;">My GitHub Activity & Repository Analysis</h3>
+    <img src="https://ghchart.rshah.org/Nandhana73" alt="GitHub Contribution Graph" style="width:100%;max-width:700px;display:block;margin:0 auto;">
+    <p style="text-align:center;font-size:0.9rem;color:#888;">(Green squares show your recent GitHub activity)</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2rem;">
+        <!-- GitHub Stats Card -->
+        <img src="https://github-readme-stats.vercel.app/api?username=Nandhana73&show_icons=true&theme=default" alt="GitHub Stats" style="max-width:420px;width:100%;">
+        <!-- Top Languages Card -->
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Nandhana73&layout=compact&theme=default" alt="Top Languages" style="max-width:320px;width:100%;">
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Nandhana TS</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
